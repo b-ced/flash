@@ -29,7 +29,8 @@ class Flash
 
     /**
      * icon<type> - icon files to customize Specific messages types
-     *
+     * Fell free to modify the 6 types below
+     * If no icon file is set, the iconDefault will be used instead
      * @var mixed
      */
     private $iconInfo;
