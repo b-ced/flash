@@ -1,70 +1,4 @@
-<style>
-    @import url('https://fonts.googleapis.com/css2?family=Athiti:wght@500&display=swap');
-
-    body {
-        font-family: 'Athiti', sans-serif;
-    }
-
-    .flash_info,
-    .flash_success,
-    .flash_error,
-    .flash_warn,
-    .flash_normal,
-    .flash_custom {
-        padding: 10px;
-        margin: 10px;
-        background-color: rgb(242, 247, 242);
-        border-radius: 5px;
-        display: flex;
-        align-items: center;
-    }
-
-    p {
-        margin: 0;
-    }
-
-    .flash_icon {
-        width: 10px;
-        height: 26px;
-        margin: 0 10px 0 0;
-    }
-
-    .flash_info {
-        border: 2px solid rgb(81, 113, 165);
-        color: rgb(81, 113, 165);
-    }
-
-    .flash_success {
-        border: 2px solid rgb(76, 149, 108);
-        color: rgb(76, 149, 108);
-    }
-
-    .flash_error {
-        border: 2px solid rgb(223, 41, 53);
-        color: rgb(223, 41, 53);
-    }
-
-    .flash_warn {
-        border: 2px solid rgb(223, 90, 0);
-        color: rgb(223, 90, 0);
-    }
-
-    .flash_normal {
-        border: 2px solid rgb(0, 0, 0);
-        color: rgb(0, 0, 0);
-    }
-
-    .flash_custom {
-        border: 2px solid rgb(89, 46, 1310);
-        color: rgb(89, 46, 131);
-    }
-</style>
-
 <?php
-
-
-
-
 /**
  * Flash
  */
@@ -76,7 +10,7 @@ class Flash
      * 
      * @var string
      */
-    private $template = '<div class="flash_%s">%s<div>%s</div></div>';
+    private $template = '<div class="flash flash_%s">%s<div>%s</div></div>';
 
     /**
      * useIcon - Use or not the icon
@@ -91,7 +25,7 @@ class Flash
      * 
      * @var string
      */
-    private $iconDefault = '<svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 512"><path fill="currentColor" d="M176 432c0 44.112-35.888 80-80 80s-80-35.888-80-80 35.888-80 80-80 80 35.888 80 80zM25.26 25.199l13.6 272C39.499 309.972 50.041 320 62.83 320h66.34c12.789 0 23.331-10.028 23.97-22.801l13.6-272C167.425 11.49 156.496 0 142.77 0H49.23C35.504 0 24.575 11.49 25.26 25.199z"></path></svg>';
+    private $iconDefault = '<path fill="currentColor" d="M256 8C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm0 110c23.196 0 42 18.804 42 42s-18.804 42-42 42-42-18.804-42-42 18.804-42 42-42zm56 254c0 6.627-5.373 12-12 12h-88c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h12v-64h-12c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h64c6.627 0 12 5.373 12 12v100h12c6.627 0 12 5.373 12 12v24z"></path>';
 
     /**
      * icon<type> - icon files to customize Specific messages types
@@ -99,13 +33,14 @@ class Flash
      * @var mixed
      */
     private $iconInfo;
-    private $iconSuccess;
-    private $iconError;
-    private $iconWarn;
+    private $iconSuccess = '<path fill="currentColor" d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"></path>';
+    private $iconError = '<path fill="currentColor" d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm121.6 313.1c4.7 4.7 4.7 12.3 0 17L338 377.6c-4.7 4.7-12.3 4.7-17 0L256 312l-65.1 65.6c-4.7 4.7-12.3 4.7-17 0L134.4 338c-4.7-4.7-4.7-12.3 0-17l65.6-65-65.6-65.1c-4.7-4.7-4.7-12.3 0-17l39.6-39.6c4.7-4.7 12.3-4.7 17 0l65 65.7 65.1-65.6c4.7-4.7 12.3-4.7 17 0l39.6 39.6c4.7 4.7 4.7 12.3 0 17L312 256l65.6 65.1z"></path>';
+    private $iconWarn = '<path fill="currentColor" d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8 256C8 119.083 119.043 8 256 8s248 111.083 248 248zm-248 50c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z"></path>';
     private $iconNormal;
     private $iconCustom;
 
-    public function __construct(bool $icon)
+
+    public function __construct(bool $icon = TRUE)
     {
         $this->useIcon = $icon;
     }
@@ -192,20 +127,6 @@ class Flash
         $this->sendFlash('custom', $data);
     }
 
-
-    /**
-     * setIconFile
-     *
-     * Function tu change the icon file for a given type
-     * 
-     * @param  string $type
-     * @param  string $data
-     * @return void
-     */
-    public function setIconFile(string $type, string $data): void
-    {
-    }
-
     /**
      * sendFlash
      *
@@ -222,7 +143,7 @@ class Flash
         if ($this->useIcon) {
             $iconFile = 'icon' . ucfirst($type);
             $iconFile = isset($this->$iconFile) ? $this->$iconFile : $this->iconDefault;
-            $icon = sprintf('<div class="flash_icon">%s</div>', $iconFile);
+            $icon = sprintf('<div class="flash_icon"><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">%s</svg></div>', $iconFile);
         }
 
         if (is_array($data)) {
@@ -231,12 +152,3 @@ class Flash
         printf($this->template, $type, $icon, $data);
     }
 }
-
-
-$flash = new Flash(TRUE);
-$flash->info('texte');
-$flash->success('texte');
-$flash->error('Line with long text just to try it out !');
-$flash->warn(['texte', 'texte']);
-$flash->normal(['texte']);
-$flash->custom(['line 1', 'line 2', 'line 3']);
