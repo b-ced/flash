@@ -12,6 +12,7 @@ $flash = new Flash();
 ```
 
 **Optional : you can add a boolean parameter; if set to TRUE (this is the default state), the script will show a nice icon**
+
 Icons used here come from FontAwesome
 ```
 $flash = new Flash(TRUE/FALSE);
