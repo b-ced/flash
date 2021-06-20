@@ -1,8 +1,11 @@
 # flash
 Display flash messages 
 
+## Requirements
+You need PHP8 to run this code
+
 ## Use
-**Create instance with one parameter; if set to TRUE, we'll show a nice icon**
+**Create instance with one parameter; if set to TRUE, the script will show a nice icon**
 
 $flash = new Flash(TRUE/FALSE);
 
