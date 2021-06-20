@@ -13,3 +13,10 @@ $flash->warn(['Some text', 'Some more text']);
 $flash->normal(['The normal one']);
 $flash->custom(['line 1', 'line 2', 'line 3']);
 ```
+
+
+
+
+**Result :**
+
+![Screen Class Flash](Class_Flash.png)
