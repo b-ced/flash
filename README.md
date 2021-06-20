@@ -1,14 +1,20 @@
 # flash
-Display flash messages 
+Display flash messages in you app
 
 ## Requirements
 You need PHP8 to run this code
 
 ## Use
-**Create instance with one parameter; if set to TRUE, the script will show a nice icon**
 
+**To get started, just call the class and try it out**  
+```
+$flash = new Flash();
+```
+
+**Optional : you can add a boolean parameter; if set to TRUE (this is the default state), the script will show a nice icon**
+```
 $flash = new Flash(TRUE/FALSE);
-
+```
 
 **Examples :**
 
