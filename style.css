@@ -1,9 +1,4 @@
-.flash_info,
-.flash_success,
-.flash_error,
-.flash_warn,
-.flash_normal,
-.flash_custom {
+.flash {
     padding: 10px;
     margin: 10px;
     background-color: rgb(242, 247, 242);
@@ -12,8 +7,17 @@
     align-items: center;
 }
 
-p {
+.flash p {
     margin: 0;
+}
+
+.flash a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.flash a:hover {
+    text-decoration: underline;
 }
 
 .flash_icon {
