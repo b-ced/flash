@@ -1,8 +1,15 @@
 # flash
 Display flash messages 
 
+## Use
+**Create instance with one parameter; if set to TRUE, we'll show a nice icon**
 
-**Use :**
+$flash = new Flash(TRUE/FALSE);
+
+**Set on icon file for a specific type of message, can be a string in the folowing list:** _info, succes, error, warn, normal, custom_
+$flash->setIconFile(\<type>, \<svg code>);
+
+**Examples :**
 
 ```php
 $flash = new Flash(TRUE);
