@@ -1,0 +1,53 @@
+.flash_info,
+.flash_success,
+.flash_error,
+.flash_warn,
+.flash_normal,
+.flash_custom {
+    padding: 10px;
+    margin: 10px;
+    background-color: rgb(242, 247, 242);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+}
+
+p {
+    margin: 0;
+}
+
+.flash_icon {
+    width: 10px;
+    height: 26px;
+    margin: 0 10px 0 0;
+}
+
+.flash_info {
+    border: 2px solid rgb(81, 113, 165);
+    color: rgb(81, 113, 165);
+}
+
+.flash_success {
+    border: 2px solid rgb(76, 149, 108);
+    color: rgb(76, 149, 108);
+}
+
+.flash_error {
+    border: 2px solid rgb(223, 41, 53);
+    color: rgb(223, 41, 53);
+}
+
+.flash_warn {
+    border: 2px solid rgb(223, 90, 0);
+    color: rgb(223, 90, 0);
+}
+
+.flash_normal {
+    border: 2px solid rgb(0, 0, 0);
+    color: rgb(0, 0, 0);
+}
+
+.flash_custom {
+    border: 2px solid rgb(89, 46, 1310);
+    color: rgb(89, 46, 131);
+}
