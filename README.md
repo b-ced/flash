@@ -37,6 +37,6 @@ $flash->custom(['line 1', 'line 2', 'line 3']);
 
 ![Screen Class Flash](Class_Flash_screen.png)
 
-## improvements
+## Improvements
 
 Flash messages appearance can be completely modified using CSS.
