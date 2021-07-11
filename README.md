@@ -1,4 +1,4 @@
-# flash
+# Flash
 Display flash messages in your app
 
 ## Requirements
