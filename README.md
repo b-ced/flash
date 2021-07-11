@@ -1,5 +1,5 @@
 # flash
-Display flash messages in you app
+Display flash messages in your app
 
 ## Requirements
 You need PHP8 to run this code
